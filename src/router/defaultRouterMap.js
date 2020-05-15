@@ -1,0 +1,35 @@
+const defaultRouterMap = [
+    {
+        name:"defaut",
+        path:'/',
+        component:()=>import('@/components/index')
+    },
+    {
+        name:"主页",
+        path:'/index',
+        component:()=>import('@/components/index'),
+        children:[
+            {
+                name:'推荐',
+                path:'/recommend',
+                component:()=>import('@/components/index/recommend')
+            },
+            {
+                name:'应用排行',
+                path:'/appRanking',
+                component:()=>import('@/components/index/appRanking')
+            },
+            {
+                name:'专家预约',
+                path:'/expertAppointment',
+                component:()=>import('@/components/index/expertAppointment')
+            }
+        ]
+    },
+    {
+        name:"筛选页",
+        path:'/filter',
+        component:()=>import('@/components/filter')
+    },
+]
+export default defaultRouterMap
